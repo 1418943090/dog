@@ -149,7 +149,12 @@ var WINDOW_WIDTH = 920;
 			var nums = [];
 
 			context.fillStyle="#005eac"
-			var date = new Date();
+			var nowDate = new Date();
+
+            var oldDate = new Date("2021-09-21 18:30:00 ")
+
+            var date = nowDate - oldDate;
+
 			var offsetX = 70, offsetY = 30;
 			var hours = date.getHours();
 			var num1 = Math.floor(hours/10);
