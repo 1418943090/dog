@@ -6,7 +6,7 @@
 <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>臭妹妹</title>
     <script>
         function  start() {
 
@@ -16,12 +16,15 @@
         }
 
           function getTime() {
-                document.getElementById("time").innerHTML = timeFn(new Date('2021-11-02 20:00:00').getTime());
+                var beginTime = '2021-11-02 20:00:00';
+                var date = beginTime.replace(/-/g,"/");
+                document.getElementById("time").innerHTML = timeFn(new Date(date).getTime());
             }
 
 
         function timeFn(dateBegin) {
             //如果时间格式是正确的，那下面这一步转化时间格式就可以不用了
+
             var dateEnd = new Date();//获取当前时间
             var dateDiff = dateEnd.getTime() - dateBegin;//时间差的毫秒数
             var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));//计算出相差天数
