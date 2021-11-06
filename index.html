@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function  start() {
+
+            for (var i = 0; i < 1000; i++) {
+                setTimeout(getTime, 1000 * i);
+            }
+        }
+
+          function getTime() {
+                document.getElementById("time").innerHTML = timeFn(new Date('2021-11-02 20:00:00').getTime());
+            }
+
+
+        function timeFn(dateBegin) {
+            //如果时间格式是正确的，那下面这一步转化时间格式就可以不用了
+            var dateEnd = new Date();//获取当前时间
+            var dateDiff = dateEnd.getTime() - dateBegin;//时间差的毫秒数
+            var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));//计算出相差天数
+            var leave1=dateDiff%(24*3600*1000)    //计算天数后剩余的毫秒数
+            var hours=Math.floor(leave1/(3600*1000))//计算出小时数
+            //计算相差分钟数
+            var leave2=leave1%(3600*1000)    //计算小时数后剩余的毫秒数
+            var minutes=Math.floor(leave2/(60*1000))//计算相差分钟数
+            //计算相差秒数
+            var leave3=leave2%(60*1000)      //计算分钟数后剩余的毫秒数
+            var seconds=Math.round(leave3/1000)
+
+            var leave4=leave3%(60*1000)      //计算分钟数后剩余的毫秒数
+            var minseconds=Math.round(leave4/1000)
+            var timeFn = dayDiff+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒";
+            return timeFn;
+        }
+
+
+    </script>
+</head>
+<body onload="start()" background="image/img_1.png" style=" backgroud-repeat:no-repeat ; background-size: 100% 100% ; background-attachment: fixed; ">
+<div >
+
+
+
+    <div class = "container">
+       <br/> <br/>   <br/>   <br/>   <br/>   <br/>
+
+        <div class="row">
+            <div class="col-xs-24 col-sm-24">
+                <h1>哎呦呦，还知道来看我啊</h1>
+                <label class="form-inline">你已经<h2 id="time"></h2>没来找我了</label>
+                <h3>限你立刻马上来找我聊天</h3>
+                <h>手机号：15797818042</h> <br/>
+                <h>微信号：huang1418943090</h> <br/>
+                <h>QQ号：1418943090</h>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
